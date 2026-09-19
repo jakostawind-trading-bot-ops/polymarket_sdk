@@ -1,7 +1,7 @@
 import httpx
 
 
-class PolymarketClient:
+class PolymarketHttpClient:
     def __init__(self, http):
         self.http = httpx.AsyncClient()
 
