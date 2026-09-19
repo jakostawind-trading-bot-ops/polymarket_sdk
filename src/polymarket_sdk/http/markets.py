@@ -15,8 +15,7 @@ class PolymarketMarket(BaseModel):
     end_date: str | None = Field(default=None, alias="endDate")
 
 async def get_market_by_id(http_client: PolymarketHttpClient, market_id: int):
-    with http_client:
-        r = http_client.http.get(GET_MARKET_BY_ID_URL.format(id = market_id))
+    r = http_client.http.get(GET_MARKET_BY_ID_URL.format(id = market_id))
     
     if r.status_code != 200:
         raise RuntimeError(
